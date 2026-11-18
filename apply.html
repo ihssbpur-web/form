@@ -32,8 +32,67 @@ input:focus,select:focus{outline:2px solid #93C5FD;border-color:var(--pri2)}
 .sh{display:flex;align-items:center;gap:10px;border-bottom:2.5px double #1E3A8A;padding-bottom:6px;margin-bottom:10px}.sh img{width:58px;height:62px;object-fit:contain}.sh div{flex:1;text-align:center}.sh b{font-size:17px}.sh .ur{font-size:16px;color:#1E3A8A;font-weight:700}
 .ano{text-align:center;font-size:22px;font-weight:800;color:var(--pri);border:2px solid var(--pri);border-radius:10px;padding:8px;margin:10px 0}
 .pwrap{display:flex;gap:10px;align-items:flex-start}.pwrap table{flex:1}.pph{width:32mm;height:40mm;border:1px dashed #64748B;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;color:#64748B;flex:none}th.sec{background:#EEF2FF;color:#1E3A8A;text-align:left;padding:5px 7px;border:1px solid #CBD5E1;font-size:12.5px}.sig{display:flex;justify-content:space-between;gap:10px;margin-top:38px;font-size:11.5px}.sig span{border-top:1px solid #000;padding-top:3px;flex:1;text-align:center}
-table{width:100%;border-collapse:collapse;font-size:13px}td{border:1px solid #CBD5E1;padding:5px 7px;vertical-align:top}td:first-child{width:38%;color:#334155;font-weight:600}
-@media print{@page{size:A4 portrait;margin:10mm}table{font-size:11px}td{padding:3px 6px}.note{font-size:10.5px}.ano{font-size:17px;padding:4px;margin:6px 0}body{background:#fff}.hd,#form,.np{display:none!important}main{padding:0;max-width:none}#slip{border:0;padding:0;margin:0}}
+#slipwrap{overflow:hidden;margin-top:10px}#slipwrap .page{margin:0 auto;box-shadow:0 2px 10px rgba(0,0,0,.18);border:1px solid #ddd}
+.upl{display:flex;gap:12px;align-items:center}.upv{width:96px;height:120px;border:1px dashed #94A3B8;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--m);text-align:center;overflow:hidden;background:#F8FAFC;flex:none}.upv img{width:100%;height:100%;object-fit:cover}.upv.sg{width:170px;height:62px}.upv.sg img{object-fit:contain;background:#fff}.bad .upv{border-color:var(--bad);background:#FEF2F2}
+.page{background:#fff;color:#000;width:210mm;min-height:297mm;margin:0 auto 16px;padding:10mm 12mm;box-shadow:0 4px 18px rgba(0,0,0,.35);font-family:"Noto Sans","Segoe UI",Arial,"Noto Sans Devanagari","Nirmala UI",Mangal,sans-serif;font-size:12.5px;line-height:1.4;position:relative;overflow:hidden}
+.page.auto{min-height:0}
+.page table{border-collapse:collapse;width:100%}
+.page .bt td,.page .bt th{border:1px solid #333;padding:4px 6px}
+.page .bt th{background:#E8EEF9}
+.ph-hd{display:flex;align-items:center;gap:12px;border-bottom:2.5px double #1E3A8A;padding-bottom:5px;margin-bottom:8px}
+.ph-hd img{width:66px;height:74px;object-fit:contain;flex:none}
+.ph-hd .ht{flex:1;text-align:center;min-width:0;padding-right:40px}
+.ph-hd .phur{font-size:17px;font-weight:700;color:#1E3A8A;line-height:1.5;margin:0}
+.ph-hd h1{margin:0;font-family:Rockwell,"Roboto Slab","Bookman Old Style",Georgia,"Times New Roman",serif;font-size:26px;color:#1E3A8A;letter-spacing:.5px;line-height:1.1;font-weight:800}
+.ph-hd p{margin:1px 0;font-size:11px}
+.ph-hd .pad{font-family:"Times New Roman",Georgia,serif;font-weight:700;font-size:13.5px;color:#1E3A8A;letter-spacing:.2px}
+.ph-hd .pct{font-size:10.5px;color:#333}
+.wmlogo{position:absolute;top:50%;left:50%;width:300px;height:300px;margin:-150px 0 0 -150px;opacity:.06;pointer-events:none}
+.af-page .ph-hd img{width:54px;height:60px}
+.af-page .ph-hd h1{font-size:23px}
+.af-page .ph-hd .phur{font-size:15px;line-height:1.35}
+.af-page .ph-hd .pad{font-size:12.5px}
+.af-page .ph-hd{padding-bottom:3px}
+.af-top{position:relative;text-align:center;margin-bottom:2px}
+.af-cls{font-size:15px;line-height:1.1}
+.af-no{display:flex;justify-content:space-between;font-size:12px;margin-top:2px}
+.af-page .ph-hd{margin-bottom:4px}
+.af-title{text-align:center;font-size:16px;font-weight:700;margin:0}
+.af-st{font-size:12px;font-weight:400}
+.af-ins{text-align:center;font-size:11.5px;margin:2px 0 4px}
+.af-wrap{display:flex;gap:6px;align-items:flex-start}
+.af-main{flex:1;min-width:0}
+.af-photo{width:30mm;height:36mm;border:1px solid #000;display:flex;align-items:center;justify-content:center;flex:none;font-size:12px;margin-top:2px}
+.af-photo img{width:100%;height:100%;object-fit:cover}
+.cbs{display:inline-flex;vertical-align:middle}
+.cb{display:inline-flex;align-items:center;justify-content:center;width:5mm;height:4.9mm;border:1px solid #000;margin-left:-1px;font-family:"Courier New",monospace;font-weight:700;font-size:12px;line-height:1}
+.cbs .cb:first-child{margin-left:0}
+.sl{display:inline-block;width:4mm;text-align:center;font-size:14px;vertical-align:middle}
+.tb{display:inline-flex;align-items:center;justify-content:center;width:4.4mm;height:4.4mm;border:1px solid #000;vertical-align:middle;font-size:11px;font-weight:700;margin-right:5px}
+.sp2{display:inline-block;margin-right:18px}
+.fbox{display:inline-block;border:1px solid #000;min-width:120mm;min-height:4.9mm;vertical-align:middle;padding:0 4px;font-weight:600}
+.dl{display:inline-block;border-bottom:1px dotted #000;min-height:4.5mm;vertical-align:bottom;font-weight:600;padding:0 2px}
+.af-h{text-align:center;font-weight:700;margin:4px 0 2px;font-size:12px}
+.af-pt td{height:8.5mm;vertical-align:top}
+.af-pr th,.af-pr td{text-align:center;font-size:10.5px;padding:2px 4px!important}
+.af-pr td{height:6.5mm}
+.af-sub{width:100%;border-collapse:collapse;font-size:11px}
+.af-sub th,.af-sub td{border:1px solid #000;text-align:center;padding:2px 3px;font-weight:400}
+.af-sub td.gap{border:0;width:4mm}
+.af-sub tr.v td{height:7mm;font-weight:700}
+.af-dec{margin:6px 0 2px}
+.af-sig{display:flex;justify-content:space-between;margin-top:12px;padding:0 4mm}
+.af-cut{color:#C00;border-bottom:1.5px dashed #C00;margin:6px 0 4px;height:7px;position:relative;font-size:13px}
+.af-cut span{position:absolute;top:-2px;background:#fff;padding:0 2px;line-height:1}
+.af-cut span:last-child{right:0}
+.af-rh{display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.af-rh i{font-family:"Monotype Corsiva","Brush Script MT",cursive;font-weight:700;text-decoration:underline;margin-left:40%}
+.af-rhd{display:flex;align-items:center;gap:8px;margin:3px 0}
+.af-rhd img{width:12mm;height:13mm;object-fit:contain}
+.af-rhd b{font-family:"Times New Roman",serif;color:#1E3A8A;font-size:15px}
+.af-rl{font-size:11.5px;margin-bottom:3px}
+.af-sig{align-items:flex-end}.af-sg{text-align:center}.af-sg img{display:block;height:11mm;max-width:45mm;object-fit:contain;margin:0 auto 1px}.ur .lp{font-family:Inter,Arial,sans-serif;font-size:.78em}
+@media print{@page{size:A4 portrait;margin:8mm}body{background:#fff}.hd,#form,.np,#rp{display:none!important}main{padding:0;max-width:none}#slip{border:0;padding:0;margin:0}#slipwrap{margin:0}#slipwrap .page{box-shadow:none;border:0;margin:0;width:auto;min-height:0;padding:0!important;zoom:1!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -62,6 +121,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}td{border:1px solid #CB
  <div><label for="eshiksha">E-Shikshakosh ID / ई-शिक्षाकोष आईडी <small>(if any / यदि हो)</small></label><input id="eshiksha" maxlength="30" placeholder="Student ID"></div>
  <div><label for="mobile">Mobile / मोबाइल <i>*</i></label><input id="mobile" type="tel" inputmode="numeric" maxlength="10" required placeholder="10 digits"></div>
  <div><label for="mobile2">Parent mobile / अभिभावक मोबाइल</label><input id="mobile2" type="tel" inputmode="numeric" maxlength="10"></div>
+ <div><label for="email">Email <small>(optional / वैकल्पिक)</small></label><input id="email" type="email" maxlength="60" autocomplete="email"></div>
 </div></div>
 <div class="card"><h2>3. Address / पता</h2><div class="g">
  <div><label for="village">Village / Mohalla / गाँव <i>*</i></label><input id="village" required maxlength="60"></div>
@@ -84,7 +144,11 @@ table{width:100%;border-collapse:collapse;font-size:13px}td{border:1px solid #CB
  <div><label for="prevPct">Percentage / प्रतिशत</label><input id="prevPct" readonly tabindex="-1"></div>
  <div><label for="prevDiv">Division / श्रेणी</label><select id="prevDiv"><option value="">—</option><option>First</option><option>Second</option><option>Third</option><option>Pass</option></select></div>
 </div></div>
-<div class="card"><h2>5. Bank (optional) / बैंक विवरण (वैकल्पिक)</h2><div class="g">
+<div class="card"><h2>5. Photo &amp; Signature / फोटो और हस्ताक्षर</h2><div class="g">
+ <div><label>Student photo / छात्र का फोटो <i>*</i> <small>(passport size, face clear / पासपोर्ट साइज़)</small></label><div class="upl"><div class="upv" id="phv">No photo<br>फोटो नहीं</div><input type="file" id="photoIn" accept="image/*" onchange="pickImg('photo',this)"></div></div>
+ <div><label>Student signature / छात्र का हस्ताक्षर <i>*</i> <small>(sign on white paper, take photo / सफ़ेद कागज़ पर साइन कर फोटो लें)</small></label><div class="upl"><div class="upv sg" id="sgv">No signature<br>हस्ताक्षर नहीं</div><input type="file" id="signIn" accept="image/*" onchange="pickImg('sign',this)"></div></div>
+</div><p class="note">Photo and signature are auto-resized. / फोटो और हस्ताक्षर अपने-आप छोटे हो जाएँगे।</p></div>
+<div class="card"><h2>6. Bank (optional) / बैंक विवरण (वैकल्पिक)</h2><div class="g">
  <div><label for="bankName">Bank & branch / बैंक</label><input id="bankName" maxlength="60"></div>
  <div><label for="bankAc">Account no. / खाता संख्या</label><input id="bankAc" inputmode="numeric" maxlength="20"></div>
  <div><label for="ifsc">IFSC</label><input id="ifsc" maxlength="11" style="text-transform:uppercase"></div>
@@ -97,6 +161,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}td{border:1px solid #CB
 <script>
 /* ===== SETUP: paste your Google Apps Script Web app URL here ===== */
 var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwliBBvyBzfbgB9VCX7FgT6FJK-zfS0fkoEmuScTJix3SaPPbXcNfCy56unQxsIlJhZ/exec';
+var SESSION = '';   // e.g. '2026-27' (blank = current session)
 /* ================================================================ */
 var LOGO=document.querySelector(".hd img").src;
 var B={"Matric":{"subs":[{"id":"M101","code":"101","n":"Hindi"},{"id":"M102","code":"102","n":"Bangla"},{"id":"M103","code":"103","n":"Urdu"},{"id":"M104","code":"104","n":"Maithili"},{"id":"M105","code":"105","n":"Sanskrit"},{"id":"M106","code":"106","n":"Hindi (NLH)"},{"id":"M107","code":"107","n":"Arabic"},{"id":"M108","code":"108","n":"Persian"},{"id":"M109","code":"109","n":"Bhojpuri"},{"id":"M110","code":"110","n":"Mathematics"},{"id":"M112","code":"112","n":"Science"},{"id":"M111","code":"111","n":"Social Science"},{"id":"M118VI","code":"118","n":"Home Science (VI, in lieu of Mathematics)"},{"id":"M120VI","code":"120","n":"Music (VI, in lieu of Science)"},{"id":"MV1","code":"","n":"Security"},{"id":"MV2","code":"","n":"Beautician"},{"id":"MV3","code":"","n":"Tourism"},{"id":"MV4","code":"","n":"Automobile"},{"id":"MV5","code":"","n":"Retail Management"},{"id":"MV6","code":"","n":"Electronics & Hardware"},{"id":"MV7","code":"","n":"Beauty & Wellness"},{"id":"MV8","code":"","n":"Telecom"},{"id":"MV9","code":"","n":"IT/ITeS"},{"id":"M113","code":"113","n":"English"},{"id":"M114","code":"114","n":"Advanced Mathematics"},{"id":"M115","code":"115","n":"Commerce"},{"id":"M116","code":"116","n":"Economics"},{"id":"M117","code":"117","n":"Fine Arts"},{"id":"M118","code":"118","n":"Home Science"},{"id":"M119","code":"119","n":"Dance"},{"id":"M120","code":"120","n":"Music"},{"id":"M121","code":"121","n":"Persian"},{"id":"M122","code":"122","n":"Sanskrit"},{"id":"M123","code":"123","n":"Arabic"},{"id":"M124","code":"124","n":"Maithili"}],"groups":[{"id":"mil","n":"MIL (first Indian language)","hi":"मातृभाषा / प्रथम भारतीय भाषा (MIL)","min":1,"max":1,"opts":["M101","M102","M103","M104"],"inTotal":true},{"id":"sil","n":"SIL (second Indian language, not same as MIL)","hi":"द्वितीय भारतीय भाषा (SIL, MIL से अलग)","min":1,"max":1,"opts":["M105","M106","M107","M108","M109"],"inTotal":true},{"id":"core","n":"Compulsory: Maths, Science, Social Science (visually impaired: Home Science / Music in lieu)","hi":"अनिवार्य: गणित, विज्ञान, सामाजिक विज्ञान (दृष्टिबाधित: गणित के बदले गृह विज्ञान / विज्ञान के बदले संगीत)","min":3,"max":3,"opts":["M110","M118VI","M112","M120VI","M111"],"def":["M110","M112","M111"],"pairs":[["M110","M118VI"],["M112","M120VI"]],"inTotal":true},{"id":"eng","n":"English (compulsory to appear; not added in 500)","hi":"अंग्रेज़ी (परीक्षा अनिवार्य; 500 में नहीं जुड़ता)","min":1,"max":1,"opts":["M113"],"inTotal":false},{"id":"opt","n":"Optional / Additional (not added in 500)","hi":"ऐच्छिक / अतिरिक्त विषय (500 में नहीं जुड़ता)","min":0,"max":1,"opts":["M114","M115","M116","M117","M118","M119","M120","M121","M122","M123","M124"],"inTotal":false},{"id":"voc","n":"Vocational (only in BSEB-identified schools; not added in 500)","hi":"व्यावसायिक विषय (केवल चिन्हित विद्यालय; 500 में नहीं जुड़ता)","min":0,"max":1,"opts":["MV1","MV2","MV3","MV4","MV5","MV6","MV7","MV8","MV9"],"inTotal":false}]},"Arts":{"subs":[{"id":"A305","code":"305","n":"English"},{"id":"A306","code":"306","n":"Hindi"},{"id":"A307","code":"307","n":"Urdu"},{"id":"A308","code":"308","n":"Maithili"},{"id":"A309","code":"309","n":"Sanskrit"},{"id":"A310","code":"310","n":"Prakrit"},{"id":"A311","code":"311","n":"Magahi"},{"id":"A312","code":"312","n":"Bhojpuri"},{"id":"A313","code":"313","n":"Arabic"},{"id":"A314","code":"314","n":"Persian"},{"id":"A315","code":"315","n":"Pali"},{"id":"A316","code":"316","n":"Bangla"},{"id":"A318","code":"318","n":"Music"},{"id":"A319","code":"319","n":"Home Science"},{"id":"A320","code":"320","n":"Philosophy"},{"id":"A321","code":"321","n":"History"},{"id":"A322","code":"322","n":"Political Science"},{"id":"A323","code":"323","n":"Geography"},{"id":"A324","code":"324","n":"Psychology"},{"id":"A325","code":"325","n":"Sociology"},{"id":"A326","code":"326","n":"Economics"},{"id":"A327","code":"327","n":"Mathematics"},{"id":"A317","code":"317","n":"Yoga & Phy. Edu."},{"id":"A328","code":"328","n":"Computer Science"},{"id":"A329","code":"329","n":"Multimedia & Web Tech."},{"id":"A330","code":"330","n":"English"},{"id":"A331","code":"331","n":"Hindi"},{"id":"A332","code":"332","n":"Urdu"},{"id":"A333","code":"333","n":"Maithili"},{"id":"A334","code":"334","n":"Sanskrit"},{"id":"A335","code":"335","n":"Prakrit"},{"id":"A336","code":"336","n":"Magahi"},{"id":"A337","code":"337","n":"Bhojpuri"},{"id":"A338","code":"338","n":"Arabic"},{"id":"A339","code":"339","n":"Persian"},{"id":"A340","code":"340","n":"Pali"},{"id":"A341","code":"341","n":"Bangla"}],"groups":[{"id":"c1","n":"Compulsory Group-1 (language)","hi":"अनिवार्य समूह-1 (भाषा)","min":1,"max":1,"opts":["A305","A306"],"inTotal":true},{"id":"c2","n":"Compulsory Group-2 (language, not chosen in Group-1)","hi":"अनिवार्य समूह-2 (भाषा, समूह-1 से अलग)","min":1,"max":1,"opts":["A305","A306","A307","A308","A309","A310","A311","A312","A313","A314","A315","A316"],"inTotal":true},{"id":"el","n":"Elective subjects","hi":"ऐच्छिक विषय","min":3,"max":3,"opts":["A318","A319","A320","A321","A322","A323","A324","A325","A326","A327"],"inTotal":true},{"id":"add","n":"Additional subject (optional, not already chosen)","hi":"अतिरिक्त विषय (वैकल्पिक, पहले से चुना न हो)","min":0,"max":1,"opts":["A317","A318","A319","A320","A321","A322","A323","A324","A325","A326","A327","A328","A329","A330","A331","A332","A333","A334","A335","A336","A337","A338","A339","A340","A341"],"inTotal":false}]},"Science":{"subs":[{"id":"S105","code":"105","n":"English"},{"id":"S106","code":"106","n":"Hindi"},{"id":"S107","code":"107","n":"Urdu"},{"id":"S108","code":"108","n":"Maithili"},{"id":"S109","code":"109","n":"Sanskrit"},{"id":"S110","code":"110","n":"Prakrit"},{"id":"S111","code":"111","n":"Magahi"},{"id":"S112","code":"112","n":"Bhojpuri"},{"id":"S113","code":"113","n":"Arabic"},{"id":"S114","code":"114","n":"Persian"},{"id":"S115","code":"115","n":"Pali"},{"id":"S116","code":"116","n":"Bangla"},{"id":"S117","code":"117","n":"Physics"},{"id":"S118","code":"118","n":"Chemistry"},{"id":"S119","code":"119","n":"Biology"},{"id":"S120","code":"120","n":"Agriculture"},{"id":"S121","code":"121","n":"Mathematics"},{"id":"S122","code":"122","n":"Computer Science"},{"id":"S123","code":"123","n":"Multimedia & Web Tech."},{"id":"S124","code":"124","n":"English"},{"id":"S125","code":"125","n":"Hindi"},{"id":"S126","code":"126","n":"Urdu"},{"id":"S127","code":"127","n":"Maithili"},{"id":"S128","code":"128","n":"Sanskrit"},{"id":"S129","code":"129","n":"Prakrit"},{"id":"S130","code":"130","n":"Magahi"},{"id":"S131","code":"131","n":"Bhojpuri"},{"id":"S132","code":"132","n":"Arabic"},{"id":"S133","code":"133","n":"Persian"},{"id":"S134","code":"134","n":"Pali"},{"id":"S135","code":"135","n":"Bangla"}],"groups":[{"id":"c1","n":"Compulsory Group-1 (language)","hi":"अनिवार्य समूह-1 (भाषा)","min":1,"max":1,"opts":["S105","S106"],"inTotal":true},{"id":"c2","n":"Compulsory Group-2 (language, not chosen in Group-1)","hi":"अनिवार्य समूह-2 (भाषा, समूह-1 से अलग)","min":1,"max":1,"opts":["S105","S106","S107","S108","S109","S110","S111","S112","S113","S114","S115","S116"],"inTotal":true},{"id":"el","n":"Elective subjects","hi":"ऐच्छिक विषय","min":3,"max":3,"opts":["S117","S118","S119","S120","S121"],"inTotal":true},{"id":"add","n":"Additional subject (optional, not already chosen)","hi":"अतिरिक्त विषय (वैकल्पिक, पहले से चुना न हो)","min":0,"max":1,"opts":["S117","S118","S119","S120","S121","S122","S123","S124","S125","S126","S127","S128","S129","S130","S131","S132","S133","S134","S135"],"inTotal":false}]},"Commerce":{"subs":[{"id":"C205","code":"205","n":"English"},{"id":"C206","code":"206","n":"Hindi"},{"id":"C207","code":"207","n":"Urdu"},{"id":"C208","code":"208","n":"Maithili"},{"id":"C209","code":"209","n":"Sanskrit"},{"id":"C210","code":"210","n":"Prakrit"},{"id":"C211","code":"211","n":"Magahi"},{"id":"C212","code":"212","n":"Bhojpuri"},{"id":"C213","code":"213","n":"Arabic"},{"id":"C214","code":"214","n":"Persian"},{"id":"C215","code":"215","n":"Pali"},{"id":"C216","code":"216","n":"Bangla"},{"id":"C217","code":"217","n":"Business Studies"},{"id":"C218","code":"218","n":"Entrepreneurship"},{"id":"C219","code":"219","n":"Economics"},{"id":"C220","code":"220","n":"Accountancy"},{"id":"C221","code":"221","n":"Computer Science"},{"id":"C222","code":"222","n":"Multimedia & Web Tech."},{"id":"C223","code":"223","n":"English"},{"id":"C224","code":"224","n":"Hindi"},{"id":"C225","code":"225","n":"Urdu"},{"id":"C226","code":"226","n":"Maithili"},{"id":"C227","code":"227","n":"Sanskrit"},{"id":"C228","code":"228","n":"Prakrit"},{"id":"C229","code":"229","n":"Magahi"},{"id":"C230","code":"230","n":"Bhojpuri"},{"id":"C231","code":"231","n":"Arabic"},{"id":"C232","code":"232","n":"Persian"},{"id":"C233","code":"233","n":"Pali"},{"id":"C234","code":"234","n":"Bangla"}],"groups":[{"id":"c1","n":"Compulsory Group-1 (language)","hi":"अनिवार्य समूह-1 (भाषा)","min":1,"max":1,"opts":["C205","C206"],"inTotal":true},{"id":"c2","n":"Compulsory Group-2 (language, not chosen in Group-1)","hi":"अनिवार्य समूह-2 (भाषा, समूह-1 से अलग)","min":1,"max":1,"opts":["C205","C206","C207","C208","C209","C210","C211","C212","C213","C214","C215","C216"],"inTotal":true},{"id":"el","n":"Elective subjects","hi":"ऐच्छिक विषय","min":3,"max":3,"opts":["C217","C218","C219","C220"],"inTotal":true},{"id":"add","n":"Additional subject (optional, not already chosen)","hi":"अतिरिक्त विषय (वैकल्पिक, पहले से चुना न हो)","min":0,"max":1,"opts":["C217","C218","C219","C220","C221","C222","C223","C224","C225","C226","C227","C228","C229","C230","C231","C232","C233","C234"],"inTotal":false}]}};
@@ -135,7 +200,7 @@ function checkSel(sc,sel){var errs=[],seen={};sc.groups.forEach(function(g){var 
  (g.pairs||[]).forEach(function(pr){if(pr.filter(function(id){return c.indexOf(id)>=0}).length!==1)errs.push(g.n+': choose exactly one of '+pr.map(function(id){return sub(sc,id).n}).join(' / '))});
  c.forEach(function(id){var b=baseN(sub(sc,id).n);if(seen[b])errs.push('Same subject chosen twice / एक ही विषय दो बार: '+sub(sc,id).n);else seen[b]=1})});return errs}
 function calc(){var m=parseFloat($('prevMarks').value),t=parseFloat($('prevTotal').value);if(m>=0&&t>0&&m<=t){var p=Math.round(m/t*10000)/100;$('prevPct').value=p;$('prevDiv').value=p>=60?'First':p>=45?'Second':p>=30?'Third':''}else $('prevPct').value=''}
-var F=['cls','stream','name','father','mother','dob','gender','nationality','category','religion','area','marital','aadhaar','apaar','pen','eshiksha','mobile','mobile2','village','ward','po','ps','district','state','pin','prevSchool','prevBoard','prevYear','prevRollCode','prevRoll','prevBoardOther','prevMarks','prevTotal','prevPct','prevDiv','bankName','bankAc','ifsc'];
+var F=['cls','stream','name','father','mother','dob','gender','nationality','category','religion','area','marital','aadhaar','apaar','pen','eshiksha','mobile','mobile2','email','village','ward','po','ps','district','state','pin','prevSchool','prevBoard','prevYear','prevRollCode','prevRoll','prevBoardOther','prevMarks','prevTotal','prevPct','prevDiv','bankName','bankAc','ifsc'];
 function showErr(list){var e=$('err');e.innerHTML=list.map(esc).join('<br>');e.style.display=list.length?'block':'none';if(list.length)e.scrollIntoView({block:'center'})}
 function collect(){var d={},errs=[];document.querySelectorAll('.bad').forEach(function(x){x.classList.remove('bad')});
  F.forEach(function(k){d[k]=$(k).value.trim()});['aadhaar','apaar','pen','mobile','mobile2','pin','bankAc'].forEach(function(k){d[k]=d[k].replace(/\D/g,'')});d.eshiksha=d.eshiksha.toUpperCase();d.ifsc=d.ifsc.toUpperCase();if(d.cls!=='XI')d.stream='';
@@ -152,6 +217,8 @@ function collect(){var d={},errs=[];document.querySelectorAll('.bad').forEach(fu
  if(d.prevYear&&!/^(19|20)\d{2}$/.test(d.prevYear))bad('prevYear','Passing year like 2026');
  var m=parseFloat(d.prevMarks),t=parseFloat(d.prevTotal);if(d.prevMarks&&d.prevTotal&&!(m>=0&&t>0&&m<=t))bad('prevMarks','Marks obtained must be between 0 and total / प्राप्तांक पूर्णांक से अधिक नहीं');
  var sc=B[sk()];if(sc){d.sel=readSel();var se=checkSel(sc,d.sel);errs=errs.concat(se);var ids=[];sc.groups.forEach(function(g){(d.sel[g.id]||[]).forEach(function(id){ids.push(id)})});d.subjects=ids.map(function(id){return lbl(sub(sc,id))}).join(', ')}
+ d.email=d.email.toLowerCase();if(d.email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email))bad('email','Check email / ईमेल जाँचें');
+ if(!PHOTO){$('phv').parentNode.parentNode.classList.add('bad');errs.push('Upload student photo / छात्र का फोटो अपलोड करें')}if(!SIGN){$('sgv').parentNode.parentNode.classList.add('bad');errs.push('Upload student signature / छात्र का हस्ताक्षर अपलोड करें')}d.photo=PHOTO;d.sign=SIGN;
  if(!$('decl').checked)errs.push('Please tick the declaration / घोषणा पर टिक करें');return{d:d,errs:errs}}
 function clientRef(){var n=new Date();return'WEB-'+n.getFullYear()+String(n.getMonth()+1).padStart(2,'0')+String(n.getDate()).padStart(2,'0')+'-'+Math.random().toString(36).slice(2,7).toUpperCase()}
 async function submitApp(ev){ev.preventDefault();var r=collect();showErr(r.errs);if(r.errs.length){alert('⚠ Please correct the following / कृपया ये सुधारें:\n\n• '+r.errs.slice(0,12).join('\n• ')+(r.errs.length>12?'\n…':''));return}
@@ -161,24 +228,81 @@ async function submitApp(ev){ev.preventDefault();var r=collect();showErr(r.errs)
  catch(e){if(e&&e.message&&!/fetch|network|json|unexpected|cors|load/i.test(e.message)){b.disabled=false;b.textContent='Submit application / आवेदन जमा करें';showErr([e.message]);return}
   try{await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:body});no=d.clientRef}catch(e2){b.disabled=false;b.textContent='Submit application / आवेदन जमा करें';showErr(['Could not submit. Check internet and try again. / इंटरनेट जाँच कर फिर से जमा करें।']);return}}
  slip(d,no,conf)}
-function slip(d,no,conf){var row=function(k,v){return'<tr><td>'+k+'</td><td>'+esc(v||'-')+'</td></tr>'};
- var sec=function(t){return'<tr><th colspan="2" class="sec">'+t+'</th></tr>'};var dt=d.submittedAt?new Date(d.submittedAt):new Date();
- var subs='';var sc=B[d.cls==='IX'?'Matric':d.stream];if(sc&&d.sel){sc.groups.forEach(function(g){var l=(d.sel[g.id]||[]).map(function(id){var x=sub(sc,id);return x?lbl(x):''}).filter(Boolean);if(l.length)subs+=row(esc(g.n.replace(/\s*\(.*$/,'')),l.join(', '))})}else subs=row('Subjects / विषय',d.subjects);
- $('slip').innerHTML='<div class="sh"><img src="'+LOGO+'" alt=""><div><div class="ur" dir="rtl" lang="ur">اسلامیہ <span class="ltr" dir="ltr">(+2)</span> ہائی اسکول</div><b>ISLAMIA (+2) HIGH SCHOOL</b><div style="font-size:12px">Simri Bakhtiyarpur, Saharsa (Bihar) - 852127</div></div></div>'+
- '<div style="text-align:center;font-weight:700;letter-spacing:.5px">ONLINE ADMISSION APPLICATION FORM — CLASS '+esc(d.cls+(d.stream?' ('+d.stream+')':''))+'</div><div class="ano" id="appno">'+(conf?'Application No.: ':'Reference No.: ')+esc(no)+'</div>'+
- (conf?'':'<p class="note">Submitted. The school will confirm your Application No. / आवेदन भेजा गया, विद्यालय आवेदन संख्या की पुष्टि करेगा।</p>')+
- '<div class="pwrap"><table>'+row('Date / तिथि',dt.toLocaleString('en-IN'))+
- sec('1. Class & subjects / कक्षा व विषय')+row('Class / कक्षा',d.cls+(d.stream?' '+d.stream:''))+subs+
- sec('2. Student / छात्र विवरण')+row('Name / नाम',d.name)+row("Father's name / पिता",d.father)+row("Mother's name / माता",d.mother)+row('Date of birth / जन्म तिथि',String(d.dob||'').split('-').reverse().join('-'))+row('Gender / लिंग',d.gender)+row('Nationality / राष्ट्रीयता',d.nationality)+row('Category / वर्ग',d.category)+row('Religion / धर्म',d.religion)+row('Area / क्षेत्र',d.area)+row('Marital status / वैवाहिक स्थिति',d.marital)+row('Aadhaar / आधार',d.aadhaar?'XXXX XXXX '+String(d.aadhaar).slice(-4):'')+row('APAAR ID / अपार आईडी',d.apaar)+row('PEN No. / पेन संख्या',d.pen)+row('E-Shikshakosh ID / ई-शिक्षाकोष',d.eshiksha)+row('Mobile / मोबाइल',d.mobile)+row('Parent mobile / अभिभावक मोबाइल',d.mobile2)+
- sec('3. Address / पता')+row('Village / Mohalla',d.village)+row('Ward no.',d.ward)+row('Post office / डाकघर',d.po)+row('Police station / थाना',d.ps)+row('District / ज़िला',d.district)+row('State / राज्य',d.state)+row('PIN',d.pin)+
- sec('4. Previous exam / पिछली परीक्षा')+row('Previous school / पिछला विद्यालय',d.prevSchool)+row('Board / बोर्ड',d.prevBoard)+row('Passing year / वर्ष',d.prevYear)+row('Roll code / रोल कोड',d.prevRollCode)+row('Roll no. / रोल नंबर',d.prevRoll)+row('Marks / अंक',d.prevMarks+' / '+d.prevTotal+' = '+d.prevPct+'%')+row('Division / श्रेणी',d.prevDiv)+
- ((d.bankName||d.bankAc||d.ifsc)?sec('5. Bank / बैंक')+row('Bank & branch',d.bankName)+row('Account no.',d.bankAc?'XXXX'+String(d.bankAc).slice(-4):'')+row('IFSC',d.ifsc):'')+
- '</table><div class="pph">Paste photo<br>फोटो चिपकाएँ</div></div>'+
- '<p style="font-size:12.5px;margin:10px 0 0">I declare that the information given is true. / मैं घोषणा करता/करती हूँ कि दी गई जानकारी सही है।</p>'+
- '<div class="sig"><span>Signature of student / छात्र का हस्ताक्षर</span><span>Signature of parent / अभिभावक का हस्ताक्षर</span><span>For office use / कार्यालय</span></div>'+
- '<p class="note">Bring this form with original marksheet, TC/SLC, Aadhaar and 2 photos at the time of admission. Admission depends on merit list and seats. / नामांकन के समय यह फॉर्म, मूल अंकपत्र, TC/SLC, आधार और 2 फोटो लाएँ। नामांकन मेधा सूची व सीटों पर निर्भर है।</p>';
- try{var c=JSON.parse(JSON.stringify(d));c.submittedAt=dt.toISOString();if(c.aadhaar)c.aadhaar=String(c.aadhaar).slice(-4);if(c.bankAc)c.bankAc=String(c.bankAc).slice(-4);localStorage.setItem('islLastApp',JSON.stringify({d:c,no:no,conf:conf}))}catch(e){}
- $('form').classList.add('hide');$('done').classList.remove('hide');window.scrollTo(0,0)}
+/* ===== Photo & signature ===== */
+var PHOTO='',SIGN='';
+function loadImg(file){return new Promise(function(res,rej){var r=new FileReader();r.onload=function(){var i=new Image();i.onload=function(){res(i)};i.onerror=function(){rej(new Error('bad'))};i.src=r.result};r.onerror=rej;r.readAsDataURL(file)})}
+function shrink(img,W,H,crop,limit){var q=.85,w,h,out='',c=document.createElement('canvas'),x=c.getContext('2d');
+ for(var t=0;t<8;t++){var sw=img.width,sh=img.height,sx=0,sy=0;
+  if(crop){var r=W/H;if(sw/sh>r){var nw=sh*r;sx=(sw-nw)/2;sw=nw}else{var nh=sw/r;sy=(sh-nh)/2;sh=nh}w=W;h=H}
+  else{var s=Math.min(1,W/sw,H/sh);w=Math.round(sw*s);h=Math.round(sh*s)}
+  c.width=w;c.height=h;x.fillStyle='#fff';x.fillRect(0,0,w,h);x.drawImage(img,sx,sy,sw,sh,0,0,w,h);out=c.toDataURL('image/jpeg',q);
+  if(out.length<=limit)break;q-=.1;if(q<.4){W=Math.round(W*.85);H=Math.round(H*.85);q=.7}}
+ return out}
+async function pickImg(kind,inp){var f=inp.files&&inp.files[0];if(!f)return;
+ if(!/^image\//.test(f.type)){alert('⚠ Please choose a photo/image file (JPG, PNG). / कृपया फोटो (JPG, PNG) चुनें।');inp.value='';return}
+ if(f.size>10*1024*1024){alert('⚠ File too large (max 10 MB). / फ़ाइल बहुत बड़ी है (अधिकतम 10 MB)।');inp.value='';return}
+ try{var img=await loadImg(f);
+  if(kind==='photo'){PHOTO=shrink(img,240,300,true,40000);$('phv').innerHTML='<img src="'+PHOTO+'" alt="photo">'}
+  else{SIGN=shrink(img,400,140,false,20000);$('sgv').innerHTML='<img src="'+SIGN+'" alt="signature">'}
+  $(kind==='photo'?'phv':'sgv').parentNode.parentNode.classList.remove('bad')}
+ catch(e){alert('⚠ Could not read this image, try another. / यह फोटो नहीं खुली, दूसरी चुनें।');inp.value=''}}
+
+/* ===== Printed admission form (same layout as school ERP) ===== */
+var SCH={name:'Islamia (+2) High School',addr:'Simri Bakhtiyarpur, Saharsa (Bihar)',pin:'852127',nameUr:'اسلامیہ (+2) ہائی اسکول',addrUr:'سمری بختیارپور، سہرسہ (بہار)'};
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+function urTxt(v){return esc(v).replace(/\(\+2\)/g,'\u0001').replace(/[()]/g,'<span class="lp">$&</span>').replace(/\u0001/g,'<span class="ltr" dir="ltr">(+2)</span>')}
+function numWords(n){n=Math.round(Number(n)||0);if(!n)return'Zero';var a=['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'],b=['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+ var tt=function(n){return n<20?a[n]:b[Math.floor(n/10)]+(n%10?' '+a[n%10]:'')},h=function(n){return n>=100?a[Math.floor(n/100)]+' Hundred'+(n%100?' '+tt(n%100):''):tt(n)};
+ var r='',th=Math.floor(n/1e3)%100,rest=n%1000;if(th)r+=tt(th)+' Thousand ';if(rest)r+=h(rest);return r.trim()}
+function dobWords(d){if(!d)return'';var p=d.split('-').map(Number),o=['','First','Second','Third','Fourth','Fifth','Sixth','Seventh','Eighth','Ninth','Tenth','Eleventh','Twelfth','Thirteenth','Fourteenth','Fifteenth','Sixteenth','Seventeenth','Eighteenth','Nineteenth','Twentieth','Twenty First','Twenty Second','Twenty Third','Twenty Fourth','Twenty Fifth','Twenty Sixth','Twenty Seventh','Twenty Eighth','Twenty Ninth','Thirtieth','Thirty First'];return o[p[2]]+' '+MONTHS[p[1]-1]+' '+numWords(p[0])}
+function bx(v,n){v=String(v==null?'':v).toUpperCase();var h='';for(var i=0;i<n;i++)h+='<span class="cb">'+esc(v[i]&&v[i]!==' '?v[i]:'')+'</span>';return'<span class="cbs">'+h+'</span>'}
+function tkb(on){return'<span class="tb">'+(on?'✓':'')+'</span>'}
+function catKey(c){return!c?'':/EBC|BC-I\b/.test(c)?'EBC':/BC/.test(c)?'BC':c==='SC'?'SC':c==='ST'?'ST':'General'}
+function dotted(v,w){return'<span class="dl" style="min-width:'+(w||30)+'mm">'+esc(v||'')+'</span>'}
+function supTh(c){return c+'<sup>th</sup>'}
+function nameRows(v){v=String(v||'').toUpperCase();var a=v,b='';if(v.length>22){var cut=v.lastIndexOf(' ',22);a=v.slice(0,cut>0?cut:22);b=v.slice(cut>0?cut+1:22)}return bx(a,22)+'<br>'+bx(b,22)}
+function sname(s){return s?esc((s.code?s.code+' ':'')+s.n):''}
+function sessionNow(){var n=new Date(),y=n.getFullYear();if(n.getMonth()<3)y--;return y+'-'+String(y+1).slice(-2)}
+function docHead(){return'<div class="ph-hd"><img src="'+LOGO+'" alt="logo"><div class="ht"><div class="ur phur" dir="rtl" lang="ur">'+urTxt(SCH.nameUr)+'، '+urTxt(SCH.addrUr)+'</div><h1>'+esc(SCH.name.toUpperCase())+'</h1><p class="pad">'+esc(SCH.addr.toUpperCase())+' '+esc(SCH.pin)+'</p></div></div>'}
+function subjTable(c1,c2,el,ad,small){el=el||[];var m=small?' <small>(100 Marks)</small>':'';return'<table class="af-sub"><tr><th colspan="2">Compulsory Subject</th><td class="gap"></td><th colspan="3">Elective Subject</th><td class="gap"></td><th>Additional Subject</th></tr><tr><th>Group-1'+m+'</th><th>Group-2'+m+'</th><td class="gap"></td><th>Group-1'+m+'</th><th>Group-2'+m+'</th><th>Group-3'+m+'</th><td class="gap"></td><th>'+(small?'<small>(100 Marks)</small>':'')+'</th></tr><tr class="v"><td>'+sname(c1)+'</td><td>'+sname(c2)+'</td><td class="gap"></td><td>'+sname(el[0])+'</td><td>'+sname(el[1])+'</td><td>'+sname(el[2])+'</td><td class="gap"></td><td>'+sname(ad)+'</td></tr></table>'}
+function admFormHTML(x,no,conf){var cls=x.cls,stream=x.stream,sr=cls==='XI',se=SESSION||sessionNow(),dob=x.dob?x.dob.split('-'):['','',''],ck2=catKey(x.category);
+ var sc=B[sr?stream:'Matric'],g=function(id){return(sc&&x.sel&&x.sel[id]||[]).map(function(i){return sub(sc,i)}).filter(Boolean)};
+ var head='<div class="af-top"><div class="af-cls">'+supTh(cls)+' - '+esc(se)+'</div><div class="af-no"><span>'+(conf?'FORM No.':'Ref. No.')+' '+dotted(no,40)+'</span><span>Roll No. '+dotted('',26)+'</span></div></div>'+docHead()+
+  '<div class="af-title"><u>Admission Form for Class-'+supTh(cls)+'</u>'+(sr?'<div class="af-st">('+['Science','Arts','Commerce'].map(function(z){return z===stream?'<b>'+z+' ✓</b>':z}).join('/')+')</div>':'')+'</div>'+
+  '<div class="af-ins">Online application submitted on '+esc(new Date(x.submittedAt||Date.now()).toLocaleString('en-IN'))+'</div>';
+ var photo='<div class="af-photo">'+(x.photo?'<img src="'+x.photo+'">':'Student’s Photo')+'</div>';
+ var aad=String(x.aadhaar||'');
+ var rows='<div class="af-wrap"><div class="af-main"><table class="af"><tr><td class="n">1.</td><td class="l">Student’s Name:</td><td>'+nameRows(x.name)+'</td></tr><tr><td class="n">2.</td><td class="l">Father’s Name:</td><td>'+nameRows(x.father)+'</td></tr><tr><td class="n">3.</td><td class="l">Mother’s Name:</td><td>'+nameRows(x.mother)+'</td></tr></table></div>'+photo+'</div>'+
+ '<table class="af"><tr><td class="n">4.</td><td colspan="2">Date of Birth ('+(sr?'as per Matric/Class-X':'as recorded in the T.C.')+'): '+bx(dob[2],2)+'<span class="sl">/</span>'+bx(dob[1],2)+'<span class="sl">/</span>'+bx(dob[0],4)+' (DD/MM/YYYY)</td></tr>'+
+ '<tr><td></td><td colspan="2">Date of Birth (in word): <span class="fbox">'+esc(dobWords(x.dob))+'</span></td></tr>'+
+ '<tr><td class="n">5.</td><td colspan="2"><span class="sp2">Sex: &nbsp; Male '+tkb(x.gender==='Male')+' &nbsp; Female '+tkb(x.gender==='Female')+'</span><span class="sp2">6. Caste category: '+['General','EBC','BC','SC','ST'].map(function(c){return c+' '+tkb(ck2===c)}).join(' ')+'</span></td></tr>'+
+ '<tr><td></td><td colspan="2" style="font-size:.95em">Nationality: '+['Indian','Other'].map(function(v){return v+' '+tkb(x.nationality===v)}).join(' ')+' &nbsp; Religion: '+['Muslim','Hindu','Sikh','Jain','Buddhist','Christian','Other'].map(function(v){return v+' '+tkb(x.religion===v)}).join(' ')+'<br>Area: '+['Rural','Urban'].map(function(v){return v+' '+tkb(x.area===v)}).join(' ')+' &nbsp; Marital Status: '+['Unmarried','Married'].map(function(v){return v+' '+tkb(x.marital===v)}).join(' ')+'</td></tr>'+
+ '<tr><td class="n">7.</td><td colspan="2"><span class="sp2">Mobile No.(Student): '+bx(x.mobile,10)+'</span><span class="sp2">Mobile No.(Parent/Guardian): '+bx(x.mobile2,10)+'</span></td></tr>'+
+ (sr?'<tr><td class="n">8.</td><td colspan="2">Email Id: <span class="fbox">'+esc(x.email)+'</span></td></tr>':'')+
+ '<tr><td class="n">'+(sr?9:8)+'.</td><td colspan="2">Address: At: '+dotted(x.village,62)+' Ward No: '+dotted(x.ward,16)+' PS: '+dotted(x.ps,44)+'<br><span style="padding-left:16mm">PO: '+dotted(x.po,36)+' Dist.: '+dotted(x.district,40)+' State: '+dotted(x.state,26)+' PIN: '+bx(x.pin,6)+'</span></td></tr>'+
+ '<tr><td class="n">'+(sr?10:9)+'.</td><td colspan="2">Aadhaar No: '+bx(aad.slice(0,4),4)+' '+bx(aad.slice(4,8),4)+' '+bx(aad.slice(8),4)+' &nbsp; E-Shikshakosh ID: <span class="fbox" style="min-width:50mm">'+esc(x.eshiksha)+'</span></td></tr>'+
+ '<tr><td></td><td colspan="2">APAAR ID: '+bx(x.apaar,12)+' &nbsp; PEN No: '+bx(x.pen,11)+'</td></tr>'+
+ '<tr><td class="n">'+(sr?11:10)+'.</td><td colspan="2">A/C No: '+bx(x.bankAc,18)+' &nbsp; IFSC Code: '+bx(x.ifsc,11)+'</td></tr>'+
+ '<tr><td></td><td colspan="2">Bank Name &amp; Branch: <span class="fbox">'+esc(x.bankName)+'</span></td></tr>'+
+ (sr?'':'<tr><td class="n">11.</td><td colspan="2">Email Id: <span class="fbox">'+esc(x.email)+'</span></td></tr>')+'</table>';
+ var mid;
+ if(!sr){var ms=[];if(sc)sc.groups.forEach(function(gr){g(gr.id).forEach(function(s){ms.push(sname(s))})});
+  mid='<div class="af-h"><u>Particulars of the School where the Applicant was reading</u></div><table class="bt af-pt"><tr><td style="width:30%">12. Name of School,<br>&nbsp;&nbsp;&nbsp;&nbsp;Place, P.O &amp; District</td><td>'+esc(x.prevSchool)+(x.prevBoard?'<br><small>Board: '+esc(x.prevBoard)+(x.prevYear?' · Year: '+esc(x.prevYear):'')+(x.prevMarks?' · Marks: '+esc(x.prevMarks)+'/'+esc(x.prevTotal)+' ('+esc(x.prevPct)+'%)':'')+'</small>':'')+'</td></tr><tr><td>13. Class in which the<br>&nbsp;&nbsp;&nbsp;&nbsp;Applicant was reading</td><td>VIII</td></tr><tr><td>14. T.C. No. &amp; Date:</td><td></td></tr><tr><td>15. Subjects opted</td><td><b>'+ms.join(', ')+'</b></td></tr></table>'}
+ else mid='<div class="af-h">12. <u>Previous Academic record</u></div><table class="bt af-pr"><tr><th>School Name</th><th>Board Name</th><th>Roll Code</th><th>Roll No.</th><th>Passing year</th><th>Division</th><th>Marks Obtained</th><th>Total Marks</th><th>Marks %</th></tr><tr><td>'+esc(x.prevSchool)+'</td><td>'+esc(x.prevBoard)+'</td><td>'+esc(x.prevRollCode)+'</td><td>'+esc(x.prevRoll)+'</td><td>'+esc(x.prevYear)+'</td><td>'+esc(x.prevDiv)+'</td><td>'+esc(x.prevMarks)+'</td><td>'+esc(x.prevTotal)+'</td><td>'+esc(x.prevPct)+'</td></tr></table>'+
+  '<div class="af-h">13. <u>Subject</u></div>'+subjTable(g('c1')[0],g('c2')[0],g('el'),g('add')[0]);
+ var decl='<p class="af-dec">I <b>'+esc(String(x.name||'').toUpperCase())+'</b>, do hereby declare that all the information given above are correct as per best of my knowledge.</p><div class="af-sig"><span class="af-sg">'+(x.sign?'<img src="'+x.sign+'">':'')+'Signature of Student</span><span>Signature of Father/Guardian</span></div><div class="af-sig"><span>Date: </span><span>Principal</span></div>';
+ var rc='';if(sr)rc='<div class="af-cut"><span>✂</span><span>✂</span></div><div class="af-rh"><i>Admission Reference Receipt</i><span>'+supTh(cls)+' '+dotted(stream||'',22)+' '+esc(se)+'</span></div>'+
+  '<div class="af-rhd"><img src="'+LOGO+'"><b>'+esc(SCH.name.toUpperCase())+' '+esc(SCH.addr.toUpperCase())+'-'+esc(SCH.pin)+'</b></div>'+
+  '<div class="af-rl">Name: '+dotted(x.name,62)+' Father’s Name: '+dotted(x.father,52)+' Roll No: '+dotted('',18)+'</div>'+
+  '<div style="text-align:center;font-weight:700;margin:2px 0">Subject Offered</div>'+subjTable(g('c1')[0],g('c2')[0],g('el'),g('add')[0],1)+'<div style="text-align:right;margin-top:6px">Sign……………………………</div>';
+ return'<div class="page af-page"><img class="wmlogo" src="'+LOGO+'">'+head+rows+mid+decl+rc+'</div>'}
+function fitSlip(){var w=$('slipwrap');if(!w)return;var p=w.querySelector('.page');if(!p)return;p.style.zoom=1;var z=Math.min(1,(w.clientWidth-2)/p.offsetWidth);p.style.zoom=z<1?z:''}
+window.addEventListener('resize',fitSlip);window.addEventListener('beforeprint',function(){var p=document.querySelector('#slip .page');if(p)p.style.zoom=''});window.addEventListener('afterprint',fitSlip);
+function slip(d,no,conf){if(!d.submittedAt)d.submittedAt=new Date().toISOString();
+ $('slip').innerHTML='<div class="ano np">'+(conf?'Application No. / आवेदन संख्या: ':'Reference No.: ')+esc(no)+'</div>'+(conf?'':'<p class="note np">Submitted. The school will confirm your Application No. / आवेदन भेजा गया, विद्यालय आवेदन संख्या की पुष्टि करेगा।</p>')+
+  '<p class="note np">Print this form (or Save as PDF) and bring it with original marksheet, TC/SLC, Aadhaar and 2 photos at the time of admission. / यह फॉर्म प्रिंट करके मूल अंकपत्र, TC/SLC, आधार और 2 फोटो के साथ लाएँ।</p><div id="slipwrap">'+admFormHTML(d,no,conf)+'</div>';
+ try{var c=JSON.parse(JSON.stringify(d));localStorage.setItem('islLastApp',JSON.stringify({d:c,no:no,conf:conf}))}catch(e){try{delete c.photo;delete c.sign;localStorage.setItem('islLastApp',JSON.stringify({d:c,no:no,conf:conf}))}catch(e2){}}
+ $('form').classList.add('hide');$('done').classList.remove('hide');window.scrollTo(0,0);setTimeout(fitSlip,30)}
 function reprint(){try{var o=JSON.parse(localStorage.getItem('islLastApp')||'null');if(o){slip(o.d,o.no,o.conf);setTimeout(function(){window.print()},300)}}catch(e){}}
 (function(){try{if(localStorage.getItem('islLastApp'))$('rp').classList.remove('hide')}catch(e){}})();
 </script>

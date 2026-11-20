@@ -249,6 +249,19 @@ main{max-width:1100px}
 .rcp .rc-sub td,.rcp .rc-sub th{border:1px solid #000;padding:1.4mm 2mm;font-size:12px;text-align:left}.rcp .rc-sub th{background:#EEE}
 #slipwrap .page+.page{margin-top:14px}
 @media print{.topbar,.nav,.mq,.ft,.view{display:none!important}#slipwrap .page.rcp{break-before:page;page-break-before:always}#slipwrap .page+.page{margin-top:0!important}}
+/* ===== v3.7.1 full-width sticky header ===== */
+.hd{position:sticky;top:0;z-index:40;width:100%}
+.hd .hdb{max-width:none!important;padding:8px 1.5vw 6px;transition:padding .2s}
+.hd .bnw{width:100%!important;max-width:none!important;margin:0}
+.hd .bnw .bna{font-size:3.1cqw!important;transition:font-size .2s}
+.hd .nav{position:static}
+.hd.sm{box-shadow:0 3px 12px rgba(3,105,161,.3)}
+.hd.sm .hdb{padding:3px 1.5vw 2px}
+.hd.sm .bnw{width:min(100%,560px)!important;margin:0 auto}
+.hd.sm .bnw .bna{display:none}
+html{scroll-padding-top:var(--hdh,160px)}
+@media(max-width:680px){.hd.sm .bnw{width:min(100%,420px)!important}}
+@media print{.hd{position:static}}
 </style>
 </head>
 <body>
@@ -382,9 +395,9 @@ var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwliBBvyBzfbgB9VCX7FgT
 var SESSION = '';   // e.g. '2026-27' (blank = current session)
 /* Website: dates & notices. Google Sheet ke "Website" aur "Notices" tab inhe badal dete hain (Code.gs v3.7). */
 var SITE = {
-  admStart: '',            // admission start date, e.g. '01/12/2026' (DD/MM/YYYY)
-  admEnd:   '',            // last date, e.g. '31/12/2026'
-  phone:    '',            // office phone, e.g. '9876543210'
+  admStart: '20/11/2026',            // admission start date, e.g. '01/12/2026' (DD/MM/YYYY)
+  admEnd:   '30/11/2026',            // last date, e.g. '31/12/2026'
+  phone:    '9430512138',            // office phone, e.g. '9876543210'
   email:    'ihssbpur@gmail.com',
   notices:  [              // { date:'20/11/2026', text:'...', link:'' }
   ]
@@ -647,6 +660,9 @@ async function stFind(){var by=document.querySelector('input[name=stby]:checked'
  b.disabled=false;b.textContent='Check status / स्थिति देखें'}
 function stPrint(i){var x=STR[i];if(!x)return;location.hash='#print';setTimeout(function(){var r=document.querySelector('input[name=rpby][value=no]');r.checked=true;rpBy();$('rpq').value=x.appNo;$('rpd').value=$('std').value;rpFind()},60)}
 (function(){var l=$('herolg');if(l)l.src=LOGO;renderSite();route();loadSite()})();
+(function(){var hd=document.querySelector('header.hd');if(!hd)return;var on=false;
+function chk(){var y=window.scrollY||document.documentElement.scrollTop;var w=on?y>20:y>90;if(w!==on){on=w;hd.classList.toggle('sm',on)}document.documentElement.style.setProperty('--hdh',(hd.offsetHeight+8)+'px')}
+window.addEventListener('scroll',chk,{passive:true});window.addEventListener('resize',chk);chk()})();
 </script>
 </body>
 </html>

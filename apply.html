@@ -287,6 +287,19 @@ html{scroll-padding-top:var(--hdc,140px)}
 .rsc .rt{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.rsc .rt div{flex:1;min-width:120px;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:8px;text-align:center}.rsc .rt small{display:block;color:#64748B;font-size:11px}.rsc .rt b{font-size:17px}
 .rsc .pass{color:#15803D}.rsc .fail{color:#B91C1C}
 @media print{body.rsp .hd,body.rsp .mq,body.rsp .ft,body.rsp .np,body.rsp .pt{display:none!important}body.rsp #v-results{display:block!important}body.rsp .rsc{border:0;padding:0}}
+/* v3.10: web result in ERP marksheet style */
+#rsout{overflow-x:auto;margin-top:12px}
+.page.wms{position:relative;background:#fff;width:210mm;max-width:none;margin:0 auto;padding:10mm 12mm;box-shadow:0 2px 12px rgba(0,0,0,.12);font-family:Arial,"Noto Sans",sans-serif;font-size:12px;color:#000;overflow:hidden;box-sizing:border-box}
+.wms .ms-hd{border-bottom:3px double #000;padding-bottom:2mm;margin-bottom:2mm}.wms .ms-hd .bnw{width:150mm}.wms .ms-hd .bnw>img{filter:brightness(0)}.wms .ms-hd .bna{font-size:15px;color:#000}
+.wms .ms-t{text-align:center;font-weight:700;font-size:15px;text-decoration:underline;margin:2mm 0 1mm}.wms .ms-e{text-align:center;margin:0 0 3mm;font-weight:600}
+.wms .bt{width:100%;border-collapse:collapse}.wms .bt td,.wms .bt th{border:1px solid #333;padding:4px 6px}.wms .bt th{background:#EEE}
+.wms .mst{font-size:11px}.wms .mst th{font-size:10.5px}.wms .mst tr.repl td{color:#666;text-decoration:line-through}.wms .mssub{font-weight:700;margin:6px 0 3px}
+.wms .ms-sg{display:flex;justify-content:space-between;margin-top:42px;font-size:12px}.wms .ms-sg div{border-top:1px solid #000;padding-top:2px;min-width:30mm;text-align:center}
+.wms .ms-n{font-size:9.5px;color:#444;margin:10px 0 0;text-align:center}
+.wms .wmlogo{opacity:.06;width:260px;height:260px;margin:-130px 0 0 -130px}
+.wms .wmw{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-35deg);font-size:88px;font-weight:800;letter-spacing:6px;color:rgba(185,28,28,.13);white-space:nowrap;pointer-events:none;z-index:0;font-family:Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wms>*:not(.wmw):not(.wmlogo){position:relative;z-index:1}
+@media print{body.rsp .page.wms{box-shadow:none;width:auto;padding:0;margin:0;zoom:1!important;min-height:0}body.rsp #rsout{overflow:visible;margin:0}body.rsp .rsc{display:none}}
 /* v3.9.0: header — no top strip, lower height, address close to banner */
 .hd .topbar{display:none!important}
 .hd{border-top:3px solid #0369A1}
@@ -346,11 +359,11 @@ html{scroll-padding-top:var(--hdc,140px)}
 <button type="button" class="btn" id="rsb" style="margin-top:10px" onclick="rsFind()">View result / परिणाम देखें</button><div id="rsm" style="margin-top:8px"></div></div>
 <div id="rsout"></div>
 <div class="card np"><h2>Board results <span class="hi">/ बिहार बोर्ड परिणाम</span></h2><p class="note" style="margin-top:0">Matric (Class 10) and Intermediate (Class 12) annual results are published by the Bihar School Examination Board, Patna. / मैट्रिक व इंटर का वार्षिक परिणाम बिहार विद्यालय परीक्षा समिति, पटना जारी करती है।</p>
-<div class="hbtn" style="justify-content:flex-start"><a class="o rsl" href="https://results.biharboardonline.com/" target="_blank" rel="noopener">🎓 BSEB Results (Matric / Inter) →</a><a class="o rsl" href="https://biharboardonline.bihar.gov.in/" target="_blank" rel="noopener">🏛️ BSEB official website →</a></div></div></section>
+<div class="hbtn" style="justify-content:flex-start"><a class="o rsl" href="https://result.biharboardonline.org" target="_blank" rel="noopener">📘 Matric Result (Class 10) →</a><a class="o rsl" href="https://interbiharboard.com/ex-26" target="_blank" rel="noopener">🎓 Inter Result (Class 12) →</a></div></div></section>
 <section id="v-notices" class="view"><div class="pt"><h2>📢 Notices / सूचना पट्ट</h2><p>Important announcements from the school. / विद्यालय की महत्वपूर्ण सूचनाएँ।</p></div><div class="card"><div class="nlist" id="nall"></div></div></section>
 <section id="v-status" class="view"><div class="pt"><h2>🔎 Know your Admission Status / नामांकन स्थिति जानें</h2><p>Enter your Application No. (or full name) and date of birth. / आवेदन संख्या (या पूरा नाम) और जन्म तिथि भरें।</p></div>
 <div class="card"><div class="rpby"><label><input type="radio" name="stby" value="no" checked onchange="stBy()"> Application No. + DOB</label><label><input type="radio" name="stby" value="name" onchange="stBy()"> Full Name + DOB</label></div>
-<div class="g"><div><label for="stq" id="stql">Application No. / आवेदन संख्या</label><input id="stq" maxlength="60" placeholder="ISL/APP/2026/0001" autocomplete="off"></div><div><label for="std">Date of Birth / जन्म तिथि</label><input id="std" type="date"></div></div>
+<div class="g"><div><label for="stq" id="stql">Application No. / आवेदन संख्या</label><input id="stq" maxlength="60" placeholder="IHS/XI-S0001/2026" autocomplete="off"></div><div><label for="std">Date of Birth / जन्म तिथि</label><input id="std" type="date"></div></div>
 <button type="button" class="btn" id="stb" style="margin-top:10px" onclick="stFind()">Check status / स्थिति देखें</button><div id="stm" style="margin-top:8px"></div></div>
 <div class="card"><h2>What the status means <span class="hi">/ स्थिति का अर्थ</span></h2><div class="lg2">
 <div><span class="stb Pending">Pending</span><span>Received, under scrutiny. / आवेदन प्राप्त, जाँच जारी।</span></div>
@@ -361,7 +374,7 @@ html{scroll-padding-top:var(--hdc,140px)}
 <div><span class="stb Rejected">Rejected</span><span>Not accepted; contact the office. / अस्वीकृत, कार्यालय से संपर्क करें।</span></div></div></div></section>
 <section id="v-print" class="view"><div class="pt" id="rpw"><h2>🖨️ Already submitted? Print your application</h2><p>पहले से आवेदन किया है? Application No. या पूरा नाम और जन्म तिथि भरकर अपना फॉर्म दोबारा प्रिंट करें।</p></div>
 <div class="card" id="rpf"><div class="rpby"><label><input type="radio" name="rpby" value="no" checked onchange="rpBy()"> Application No. + DOB</label><label><input type="radio" name="rpby" value="name" onchange="rpBy()"> Full Name + DOB</label></div>
-<div class="g"><div><label for="rpq" id="rpql">Application No. / आवेदन संख्या</label><input id="rpq" maxlength="60" placeholder="ISL/APP/2026/0001" autocomplete="off"></div><div><label for="rpd">Date of Birth / जन्म तिथि</label><input id="rpd" type="date"></div></div>
+<div class="g"><div><label for="rpq" id="rpql">Application No. / आवेदन संख्या</label><input id="rpq" maxlength="60" placeholder="IHS/XI-S0001/2026" autocomplete="off"></div><div><label for="rpd">Date of Birth / जन्म तिथि</label><input id="rpd" type="date"></div></div>
 <button type="button" class="btn" id="rpb" style="margin-top:10px" onclick="rpFind()">Find &amp; print / खोजें और प्रिंट करें</button><div id="rpm" class="note" style="margin-top:8px"></div></div>
 <div class="card"><div class="note">Format 1 = Admission Form (2 pages: form + Admission Reference Receipt) · Format 2 = Application Report (1 page). / फॉर्मेट 1 में फॉर्म और रसीद अलग-अलग पेज पर छपते हैं।</div></div></section>
 <section id="v-apply" class="view"><div class="pt"><h2>📝 Online Admission Form / ऑनलाइन नामांकन आवेदन</h2><p id="apsub">Class IX and Class XI (Arts, Science, Commerce). Fields with * are required. / * वाले खाने ज़रूरी हैं।</p></div><div id="apclosed"></div>
@@ -547,7 +560,7 @@ function sname(s){return s?esc((s.code?s.code+' ':'')+s.n):''}
 function sessionNow(){var n=new Date(),y=n.getFullYear();if(n.getMonth()<3)y--;return y+'-'+String(y+1).slice(-2)}
 function docHead(){return'<div class="ph-hd bnh"><div class="bnw"><img class="bnr" src="'+BANNER+'" alt="'+esc(SCH.name)+'"><div class="bna">'+esc(SCH.addr)+'-'+esc(SCH.pin)+'</div></div></div>'}
 function subjTable(c1,c2,el,ad,small){el=el||[];var m=' <small>(100 Marks)</small>';return'<table class="af-sub"><tr><th colspan="2">Compulsory Subject</th><td class="gap"></td><th colspan="3">Elective Subject</th><td class="gap"></td><th>Additional Subject</th></tr><tr><th>Group-1'+m+'</th><th>Group-2'+m+'</th><td class="gap"></td><th>Group-1'+m+'</th><th>Group-2'+m+'</th><th>Group-3'+m+'</th><td class="gap"></td><th><small>(100 Marks)</small></th></tr><tr class="v"><td>'+sname(c1)+'</td><td>'+sname(c2)+'</td><td class="gap"></td><td>'+sname(el[0])+'</td><td>'+sname(el[1])+'</td><td>'+sname(el[2])+'</td><td class="gap"></td><td>'+sname(ad)+'</td></tr></table>'}
-var GS='<div class="gs"></div>';
+var GS='';
 function admFormHTML(x,no,conf){var cls=x.cls,stream=x.stream,sr=cls==='XI',se=SESSION||sessionNow(),dob=x.dob?x.dob.split('-'):['','',''],ck2=catKey(x.category);
  var sc=B[sr?stream:'Matric'],g=function(id){return(sc&&x.sel&&x.sel[id]||[]).map(function(i){return sub(sc,i)}).filter(Boolean)};
  var head='<div class="af-top"><div class="af-cls">'+supTh(cls)+' - '+esc(se)+'</div><div class="af-no"><span>'+(conf?'FORM No.':'Ref. No.')+' '+dotted(no,40)+'</span><span>Roll No. '+dotted('',26)+'</span></div></div>'+docHead()+
@@ -614,10 +627,16 @@ function repHTML(x,no,conf){var sr=x.cls==='XI',se=SESSION||sessionNow(),D=funct
  var note='<div class="rp-note">🔔 नामांकन के समय यह प्रति, मूल अंकपत्र, TC/SLC, आधार और 2 फोटो साथ लाएँ &nbsp;|&nbsp; Bring this copy with original documents at the time of admission</div>';
  var foot='<div class="rp-ft">© '+new Date().getFullYear()+' '+esc(SCH.name)+', '+esc(SCH.addr)+'-'+esc(SCH.pin)+' · Online Admission Application · Submitted '+longDate(x.submittedAt)+'</div>';
  return'<div class="page rpg"><div class="rp-hd"><div class="bnw"><img src="'+BANNER+'" alt="'+esc(SCH.name)+'"><div class="bna">'+esc(SCH.addr)+'-'+esc(SCH.pin)+'</div></div><div class="rp-sub">ONLINE ADMISSION APPLICATION &nbsp;|&nbsp; '+cl.toUpperCase()+'</div></div>'+
-  '<div class="rp-meta">Application Generated: '+longDate(x.submittedAt)+' &nbsp;|&nbsp; Academic Session '+esc(se).replace('-','–')+'</div><div class="rp-top">'+info+ph+'</div>'+acad+subs+box+note+foot+'</div>'+rcpHTML(x,no,conf)}
+  '<div class="rp-meta">Application Generated: '+longDate(x.submittedAt)+' &nbsp;|&nbsp; Academic Session '+esc(se).replace('-','–')+'</div><div class="rp-top">'+info+ph+'</div>'+acad+subs+box+note+foot+'</div>'+
+  '<div class="page rpg rcp2"><div class="rp-hd"><div class="bnw"><img src="'+BANNER+'" alt="'+esc(SCH.name)+'"><div class="bna">'+esc(SCH.addr)+'-'+esc(SCH.pin)+'</div></div><div class="rp-sub">ADMISSION REFERENCE RECEIPT · नामांकन संदर्भ रसीद &nbsp;|&nbsp; '+cl.toUpperCase()+'</div></div>'+
+  '<div class="rp-meta">Date: '+longDate(x.submittedAt)+' &nbsp;|&nbsp; Academic Session '+esc(se).replace('-','–')+'</div><div class="rp-top"><table class="rp-info">'+I('Applicant Name','<b>'+D(String(x.name||'').toUpperCase())+'</b>','Application No.','<b>'+esc(no)+'</b>')+I("Father's Name",D(String(x.father||'').toUpperCase()),"Mother's Name",D(String(x.mother||'').toUpperCase()))+I('Date of Birth',x.dob?dmy(x.dob):D(''),'Gender',D(x.gender))+I('Class / Stream','<b>'+cl+'</b>','Session',esc(se))+I('Mobile',D(x.mobile),'Parent Mobile',D(x.mobile2))+'</table>'+ph+'</div>'+
+  subs.replace('Subjects Opted','Subject Offered / चुने गए विषय')+
+  '<div class="rp-box"><div class="rp-bt">INSTRUCTIONS / निर्देश</div><p class="rp-dec">Keep this receipt safe. Bring it with the Admission Form, original marksheet, TC/SLC, Aadhaar and 2 photos at the time of admission. Admission is final only after document verification. / यह रसीद सँभाल कर रखें; नामांकन के समय फॉर्म व मूल दस्तावेज़ों के साथ लाएँ। दस्तावेज़ सत्यापन के बाद ही नामांकन मान्य होगा।</p>'+
+  '<div class="rp-sg"><div>'+(x.sign?'<img src="'+x.sign+'" alt="sign">':'')+'<span>Signature of Student</span></div><div><span>Received by (Office Seal &amp; Sign)</span></div></div>'+
+  '<div class="rp-tot"><span>APPLICATION NO.:</span><b>'+esc(no)+'</b></div></div>'+foot+'</div>'}
 function showFmt(n){FMT=n;if(!LAST)return;var w=$('slipwrap');if(!w)return;w.innerHTML=n===2?repHTML(LAST.d,LAST.no,LAST.conf):admFormHTML(LAST.d,LAST.no,LAST.conf);setTimeout(function(){document.querySelectorAll('#slipwrap .page.af-page.fx').forEach(spreadLines)},60);document.querySelectorAll('.fmtb').forEach(function(b){b.classList.toggle('on',+b.dataset.f===n)});setTimeout(fitSlip,20)}
 var SPR_ROWS='table.af tr,table.af-pt tr,table.af-pr tr,table.af-sub tr',SPR_BLK='.af-ins,.af-h,.af-dec,.af-sig';
-function spreadLines(p){if(!p||!p.classList.contains('fx'))return;var mm=96/25.4,avail=277*mm,i,k;
+function spreadLines(p){if(!p||!p.classList.contains('fx'))return;var mm=96/25.4,avail=278*mm,i,k;
  var rows=[].slice.call(p.querySelectorAll(SPR_ROWS)),blks=[].slice.call(p.querySelectorAll(SPR_BLK)),cells=[];
  rows.forEach(function(r){[].slice.call(r.children).forEach(function(c){c.style.paddingTop=c.style.paddingBottom='';cells.push(c)})});blks.forEach(function(b){b.style.paddingTop=''});
  var z=p.style.zoom;p.style.zoom='';p.classList.add('sp');p.classList.add('smeas');
@@ -634,9 +653,9 @@ function slip(d,no,conf){if(!d.submittedAt)d.submittedAt=new Date().toISOString(
  $('slip').innerHTML='<div class="ano np">'+(conf?'Application No. / आवेदन संख्या: ':'Reference No.: ')+esc(no)+'</div>'+(conf?'':'<p class="note np">Submitted. The school will confirm your Application No. / आवेदन भेजा गया, विद्यालय आवेदन संख्या की पुष्टि करेगा।</p>')+
   '<p class="note np">Print this form (or Save as PDF) and bring it with original marksheet, TC/SLC, Aadhaar and 2 photos at the time of admission. / यह फॉर्म प्रिंट करके मूल अंकपत्र, TC/SLC, आधार और 2 फोटो के साथ लाएँ।</p><div class="fmtbar np"><button type="button" class="fmtb on" data-f="1" onclick="showFmt(1)">Format 1 · Admission Form + Receipt</button><button type="button" class="fmtb" data-f="2" onclick="showFmt(2)">Format 2 · Application Report + Receipt</button></div><div id="slipwrap">'+admFormHTML(d,no,conf)+'</div>';LAST={d:d,no:no,conf:conf};FMT=1;
  try{localStorage.removeItem('islLastApp')}catch(e){}
- document.querySelectorAll('.view').forEach(function(v){v.classList.remove('on')});$('done').classList.remove('hide');window.scrollTo(0,0);setTimeout(fitSlip,30)}
+ document.querySelectorAll('.view').forEach(function(v){v.classList.remove('on')});$('done').classList.remove('hide');window.scrollTo(0,0);setTimeout(fitSlip,30);setTimeout(function(){document.querySelectorAll('#slipwrap .page.af-page.fx').forEach(spreadLines)},90)}
 function reprint(n){try{var o=JSON.parse(localStorage.getItem('islLastApp')||'null');if(o){slip(o.d,o.no,o.conf);printFmt(n||1)}}catch(e){}}
-function rpBy(){var n=document.querySelector('input[name=rpby]:checked').value==='name';$('rpql').textContent=n?'Full name (as in form) / पूरा नाम (जैसा फॉर्म में भरा)':'Application No. / आवेदन संख्या';$('rpq').placeholder=n?'e.g. MD ARMAN ALAM':'ISL/APP/2026/0001';$('rpq').value='';$('rpm').textContent=''}
+function rpBy(){var n=document.querySelector('input[name=rpby]:checked').value==='name';$('rpql').textContent=n?'Full name (as in form) / पूरा नाम (जैसा फॉर्म में भरा)':'Application No. / आवेदन संख्या';$('rpq').placeholder=n?'e.g. MD ARMAN ALAM':'IHS/XI-S0001/2026';$('rpq').value='';$('rpm').textContent=''}
 var RPR=[];
 async function rpFind(){var by=document.querySelector('input[name=rpby]:checked').value,q=$('rpq').value.trim(),dob=$('rpd').value,m=$('rpm');
  if(!q||!dob){m.innerHTML='<b style="color:#B91C1C">'+(by==='name'?'Enter full name':'Enter Application No.')+' and Date of Birth / '+(by==='name'?'नाम':'आवेदन संख्या')+' और जन्म तिथि भरें</b>';return}
@@ -697,7 +716,7 @@ function newApp(){location.hash='#apply';location.reload()}
 async function loadSite(){if(!SCRIPT_URL)return;try{var r=await fetch(SCRIPT_URL+'?action=info',{redirect:'follow'});var j=await r.json();if(!j||!j.ok)return;var w=j.site||{};
  ['admStart','admEnd','phone','email','session'].forEach(function(k){if(w[k])SITE[k]=w[k]});if(j.notices&&j.notices.length)SITE.notices=j.notices;renderSite()}catch(e){}}
 /* status */
-function stBy(){var n=document.querySelector('input[name=stby]:checked').value==='name';$('stql').textContent=n?'Full name (as in form) / पूरा नाम (जैसा फॉर्म में भरा)':'Application No. / आवेदन संख्या';$('stq').placeholder=n?'e.g. MD ARMAN ALAM':'ISL/APP/2026/0001';$('stq').value='';$('stm').innerHTML=''}
+function stBy(){var n=document.querySelector('input[name=stby]:checked').value==='name';$('stql').textContent=n?'Full name (as in form) / पूरा नाम (जैसा फॉर्म में भरा)':'Application No. / आवेदन संख्या';$('stq').placeholder=n?'e.g. MD ARMAN ALAM':'IHS/XI-S0001/2026';$('stq').value='';$('stm').innerHTML=''}
 var ST_HI={'Pending':'प्रक्रिया में','Under Review':'जाँच जारी','Selected':'चयनित','Waitlist':'प्रतीक्षा सूची','Admitted':'नामांकित','Rejected':'अस्वीकृत'};
 var ST_MSG={'Pending':'Your application has been received and is under scrutiny. Please check again later. / आपका आवेदन प्राप्त हो गया है, जाँच जारी है।','Under Review':'Your documents and marks are being checked. / दस्तावेज़ों व अंकों की जाँच हो रही है।','Selected':'Congratulations! You are selected. Come to school with the printed form and original documents to take admission. / बधाई! आप चयनित हैं, फॉर्म व मूल दस्तावेज़ लेकर विद्यालय आएँ।','Waitlist':'You are on the waiting list. Admission will be given if seats become available. / आप प्रतीक्षा सूची में हैं।','Admitted':'Your admission is complete. Welcome to Islamia (+2) High School! / आपका नामांकन पूर्ण हो गया है।','Rejected':'Your application was not accepted. Please contact the school office. / आवेदन स्वीकार नहीं हुआ, कार्यालय से संपर्क करें।'};
 var STR=[];
@@ -731,17 +750,29 @@ async function rsFind(){var ex=$('rsx').value,roll=$('rsr').value.trim(),dob=$('
  try{var r=await fetch(SCRIPT_URL+'?action=result&exam='+encodeURIComponent(ex)+'&roll='+encodeURIComponent(roll)+'&dob='+encodeURIComponent(dob),{redirect:'follow'});var j=await r.json();
   if(!j.ok)m.innerHTML='<b style="color:#B91C1C">'+esc(/action|key/i.test(j.error||'')?'Result service is being updated. Please try later. / सेवा अपडेट हो रही है।':(j.error||'Server error'))+'</b>';
   else if(!j.row)m.innerHTML='<b style="color:#B91C1C">No result found. Check Roll No. and date of birth. / परिणाम नहीं मिला, रोल नं. व जन्म तिथि जाँचें।</b>';
-  else{RSR=j.row;o.innerHTML=rsHTML(j.row)}}
+  else{RSR=j.row;o.innerHTML=rsHTML(j.row);rsFit()}}
  catch(e){m.innerHTML='<b style="color:#B91C1C">Could not check right now. Check internet and try again. / अभी नहीं देख सके, इंटरनेट जाँच कर फिर कोशिश करें।</b>'}
  b.disabled=false;b.textContent='View result / परिणाम देखें'}
-function rsHTML(x){var pass=/pass/i.test(x.result),subs=x.subjects||[],pr=subs.some(function(s){return s.pr!==''&&s.pr!==undefined&&s.pr!==null});
- var rows=subs.map(function(s){return'<tr class="'+(s.rep?'rp':s.fail?'f':s.extra?'x':'')+'"><td>'+esc(s.code||'')+'</td><td>'+esc(s.n)+(s.add?' <small>(+)</small>':'')+(s.extra?' <small>(not in total)</small>':'')+'</td><td class="n">'+esc(s.th)+'</td>'+(pr?'<td class="n">'+esc(s.pr||'')+'</td>':'')+'<td class="n"><b>'+esc(s.tot)+'</b></td><td class="n">'+esc(s.max)+'</td><td class="n">'+esc(s.grade||'')+'</td></tr>'}).join('');
- return'<div class="rsc"><div class="rh"><b>ISLAMIA (+2) HIGH SCHOOL, SIMRI BAKHTIYARPUR</b><span>'+esc(x.exam)+' · Class '+esc(x.cls)+(x.session?' · Session '+esc(x.session):'')+'</span></div>'+
- '<table class="ri"><tr><td>Student / छात्र</td><td><b>'+esc(String(x.name||'').toUpperCase())+'</b></td></tr><tr><td>Father / पिता</td><td>'+esc(String(x.father||'').toUpperCase())+'</td></tr><tr><td>Roll No. / रोल नं.</td><td><b>'+esc(x.roll)+'</b>'+(x.section?' &nbsp; Section: '+esc(x.section):'')+'</td></tr><tr><td>Date of Birth / जन्म तिथि</td><td>'+esc(fD(x.dob))+'</td></tr></table>'+
- '<table style="margin-top:10px"><tr><th>Code</th><th>Subject / विषय</th><th class="n">'+(pr?'Theory':'Marks')+'</th>'+(pr?'<th class="n">Pract.</th>':'')+'<th class="n">Total</th><th class="n">Max</th><th class="n">Grade</th></tr>'+(rows||'<tr><td colspan="7">—</td></tr>')+'</table>'+
- '<div class="rt"><div><small>Total / कुल</small><b>'+esc(x.total)+' / '+esc(x.max)+'</b></div><div><small>Percentage / प्रतिशत</small><b>'+esc(x.percent)+'%</b></div><div><small>Division / श्रेणी</small><b>'+esc(x.division||'')+'</b></div><div><small>Result / परिणाम</small><b class="'+(pass?'pass':'fail')+'">'+(pass?'PASS / उत्तीर्ण':'FAIL / अनुत्तीर्ण')+'</b></div>'+(pass&&x.rank&&x.rank!=='-'?'<div><small>Rank / स्थान</small><b>'+esc(x.rank)+'</b></div>':'')+'</div>'+
- '<p class="note">This is a web copy for information only; the school marksheet is the valid document. / यह केवल सूचना हेतु वेब प्रति है, विद्यालय का अंकपत्र ही मान्य है।'+(x.at?' · Published: '+esc(x.at):'')+'</p>'+
- '<button type="button" class="btn sm2 np" onclick="document.body.classList.add(\'rsp\');window.print();setTimeout(function(){document.body.classList.remove(\'rsp\')},800)">🖨️ Print result</button></div>'}
+function rsFit(){var o=$('rsout'),p=o&&o.querySelector('.page.wms');if(!p)return;p.style.zoom='';var z=Math.min(1,(o.clientWidth-2)/p.offsetWidth);p.style.zoom=z<1?z:''}
+window.addEventListener('resize',function(){if(typeof rsFit==='function')rsFit()});
+function rsHTML(x){var J=x.subjects||[],O=Array.isArray(J)?{subs:J}:J,subs=O.subs||[],pass=/pass/i.test(x.result),C=function(v){return'<td style="text-align:center">'+v+'</td>'},ob=function(v){return v===''||v===undefined||v===null?'-':esc(v)};
+ var row=function(z,i){var thM=z.thM!==undefined?z.thM:(z.max||''),prM=+z.prM||0;return'<tr'+(z.rep?' class="repl"':'')+'>'+C(i)+C('<b>'+esc(z.code||'')+'</b>')+'<td>'+esc(z.n)+(z.rep?' <i>(replaced by additional)</i>':'')+(z.add?' <b>(+ counted in place of failed subject)</b>':'')+'</td>'+C(esc(thM))+C(z.thP!==undefined?esc(z.thP):'-')+C('<b>'+ob(z.th)+'</b>')+C(prM||'-')+C(prM?esc(z.prP):'-')+C('<b>'+(prM?ob(z.pr):'-')+'</b>')+C(esc(z.max))+C('<b>'+(z.blank?'-':ob(z.tot))+'</b>')+C(z.blank?'':z.fail?'<span style="color:#B91C1C">Fail</span>':'Pass')+'</tr>'};
+ var cnt=subs.filter(function(z){return!z.extra}),oth=subs.filter(function(z){return z.extra});
+ var head='<thead><tr><th rowspan="2">#</th><th rowspan="2">Code</th><th rowspan="2" style="text-align:left">Subject</th><th colspan="3">Theory</th><th colspan="3">Practical / Internal</th><th colspan="2">Total</th><th rowspan="2">Remark</th></tr><tr><th>Max</th><th>Pass</th><th>Obt.</th><th>Max</th><th>Pass</th><th>Obt.</th><th>Max</th><th>Obt.</th></tr></thead>';
+ var T=function(a,b){return'<td style="width:22%">'+a+'</td><td'+(b[1]?' colspan="'+b[1]+'"':'')+'>'+b[0]+'</td>'};
+ return'<div class="page wms"><img class="wmlogo" src="'+LOGO+'" alt=""><div class="wmw">WEB COPY</div>'+
+ '<div class="ms-hd"><div class="bnw"><img src="'+BANNER+'" alt="'+esc(SCH.name)+'"><div class="bna">'+esc(SCH.addr)+'-'+esc(SCH.pin)+'</div></div></div>'+
+ '<div class="ms-t">MARKS SHEET / PROGRESS REPORT</div><p class="ms-e">'+esc(x.exam)+(x.session?' · Session '+esc(x.session):'')+'</p>'+
+ '<table class="bt"><tr>'+T("Student's Name",['<b>'+esc(String(x.name||'').toUpperCase())+'</b>',3])+'</tr><tr>'+T("Father's Name",[esc(String(x.father||'').toUpperCase()),3])+'</tr>'+(O.mother?'<tr>'+T("Mother's Name",[esc(String(O.mother).toUpperCase()),3])+'</tr>':'')+
+ '<tr><td>Class</td><td><b>'+esc(x.cls)+(x.section?' - '+esc(x.section):'')+'</b></td><td>Roll No.</td><td><b>'+esc(x.roll)+'</b></td></tr><tr><td>Admission No.</td><td>'+esc(O.admNo||'-')+'</td><td>Date of Birth</td><td>'+esc(dmy(x.dob))+'</td></tr></table>'+
+ '<table class="bt mst" style="margin-top:8px">'+head+'<tbody>'+cnt.map(function(z,i){return row(z,i+1)}).join('')+'<tr class="sumrow"><td colspan="9" style="text-align:right"><b>Grand Total (subjects counted)</b></td>'+C('<b>'+esc(x.max)+'</b>')+C('<b>'+esc(x.total)+'</b>')+'<td></td></tr></tbody></table>'+
+ (oth.length?'<div class="mssub">Subjects not counted in total</div><table class="bt mst">'+head+'<tbody>'+oth.map(function(z,i){return row(z,cnt.length+i+1)}).join('')+'</tbody></table>':'')+
+ '<table class="bt" style="margin-top:8px"><tr><td>Percentage</td><td><b>'+esc(x.percent)+'%</b></td><td>Division</td><td><b>'+esc(x.division||'')+'</b></td><td>Result</td><td><b style="color:'+(pass?'#166534':'#B91C1C')+'">'+(pass?'PASS':'FAIL')+'</b></td></tr><tr><td>Rank in class</td><td><b>'+esc(x.rank||'-')+'</b></td><td>Attendance</td><td>'+esc(O.att||'-')+'</td><td>Published</td><td>'+esc(String(x.at||'').slice(0,10).split('-').reverse().join('-'))+'</td></tr>'+
+ (O.fails&&O.fails.length?'<tr><td>Failed in</td><td colspan="5">'+esc(O.fails.join(', '))+'</td></tr>':'')+(O.swap?'<tr><td>Additional subject</td><td colspan="5">'+esc(O.swap)+'</td></tr>':'')+'</table>'+
+ (O.rule?'<p style="font-size:9.5px;margin:6px 0 0">'+esc(O.rule)+'</p>':'')+
+ '<div class="ms-sg"><div>Class Teacher</div><div>Parent / Guardian</div><div>School Seal</div><div>Principal</div></div>'+
+ '<p class="ms-n">WEB COPY: for information only. The marksheet issued by the school is the valid document. / यह केवल सूचना हेतु वेब प्रति है, विद्यालय द्वारा जारी अंकपत्र ही मान्य है।</p></div>'+
+ '<div class="np" style="margin-top:10px"><button type="button" class="btn sm2" onclick="document.body.classList.add(\'rsp\');window.print();setTimeout(function(){document.body.classList.remove(\'rsp\')},800)">🖨️ Print result</button></div>'}
 (function(){var l=$('herolg');if(l)l.src=LOGO;renderSite();route();loadSite()})();
 (function(){var hd=document.querySelector('header.hd');if(!hd)return;var on=false,full=0;
 function meas(){var w=on;if(w)hd.classList.remove('sm');full=hd.offsetHeight;if(w)hd.classList.add('sm');document.documentElement.style.setProperty('--hdh',full+'px')}
